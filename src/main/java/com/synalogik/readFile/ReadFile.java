@@ -41,9 +41,8 @@ public class ReadFile {
 	private boolean unconWordEnd(int val) {
 		
 		if (val >= 0 && val <= 34 ||
-				val >= 39 && val <= 41 ||
-				val == 59 || 
-				val == 63) {
+				val >= 39 && val <= 43 ||
+				val >= 59 && val <= 63) {
 			return true; 
 		} 
 		return false;	

@@ -33,7 +33,6 @@ public class Runner {
 //			Evaluates user input
 			if (res.equalsIgnoreCase("n")) break;
 				
-			
 		}
 		
 
