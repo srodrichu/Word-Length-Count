@@ -30,7 +30,7 @@ public class FomatMapTest {
 		FormatMap build = new FormatMap();
 		String str = "Word count = 20\nAverage word length = 4.65\nNumber of words of length 1 is 3\nNumber of words of length 2 is 3\nNumber of words of length 3 is 2\nNumber of words of length 4 is 3\nNumber of words of length 5 is 4\nNumber of words of length 6 is 1\nNumber of words of length 10 is 4\nThe most frequently occurring word length is 4, for word lengths of 5 & 10";
 		
-		assertEquals(str, build.getWordCount(file1));
+		assertEquals(str, build.getFormatString(file1));
 	}
 	
 	@Test
@@ -41,7 +41,7 @@ public class FomatMapTest {
 		FormatMap build = new FormatMap();
 		String str = "Word count = 21\nAverage word length = 4.6666665\nNumber of words of length 1 is 3\nNumber of words of length 2 is 3\nNumber of words of length 3 is 2\nNumber of words of length 4 is 3\nNumber of words of length 5 is 5\nNumber of words of length 6 is 1\nNumber of words of length 10 is 4\nThe most frequently occurring word length is 5, for word length of 5";
 		
-		assertEquals(str, build.getWordCount(file2));
+		assertEquals(str, build.getFormatString(file2));
 		
 	}
 	
@@ -53,7 +53,7 @@ public class FomatMapTest {
 		FormatMap build = new FormatMap();
 		String str = "Word count = 21\nAverage word length = 4.6190476\nNumber of words of length 1 is 3\nNumber of words of length 2 is 3\nNumber of words of length 3 is 2\nNumber of words of length 4 is 4\nNumber of words of length 5 is 4\nNumber of words of length 6 is 1\nNumber of words of length 10 is 4\nThe most frequently occurring word length is 4, for word lengths of 4, 5 & 10";
 		
-		assertEquals(str, build.getWordCount(file3));
+		assertEquals(str, build.getFormatString(file3));
 		
 	}
 	

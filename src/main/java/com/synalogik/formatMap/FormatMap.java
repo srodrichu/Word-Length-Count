@@ -17,10 +17,12 @@ public class FormatMap {
 		
 		String res;
 		
-		int max = Collections.max(map.values());
-		String template = "The most frequently occurring word length is " + max + ", ";
+		int max = Collections.max(map.values()); // Get the highest value in the map
+		String strTemplate = "The most frequently occurring word length is " + max + ", ";
 		
 		List<Integer> maxKeys = new ArrayList<Integer>();
+		
+//		Loop through the map to find the keys with the highest value
 		
 		for (Entry<Integer, Integer> entry : map.entrySet()) {
 			if (entry.getValue()==max) {
@@ -28,28 +30,33 @@ public class FormatMap {
 			}
 		}
 		
-		if (maxKeys.size() == 1) res = template + "for word length of " + maxKeys.get(0);
-		else if (maxKeys.size() == 2) res = template + "for word lengths of " + maxKeys.get(0) + " & " + maxKeys.get(1);
+//		Handle change in language based on whether or not there are 1, 2 or more max key variables
+		if (maxKeys.size() == 1) res = strTemplate + "for word length of " + maxKeys.get(0);
+		else if (maxKeys.size() == 2) res = strTemplate + "for word lengths of " + maxKeys.get(0) + " & " + maxKeys.get(1);
 		else {
 			int lastInd = maxKeys.size() - 1;
 			int lastInt = maxKeys.get(lastInd);
 			maxKeys.remove(lastInd);
 			
+//			Join list of maxKeys
 			String joined = maxKeys
 					.stream().map(String::valueOf)
 				    .collect(Collectors.joining(", "));
 
-			res = template + "for word lengths of " + joined + " & " + lastInt;
+			res = strTemplate + "for word lengths of " + joined + " & " + lastInt;
 		}
 		
 		return res;
 	}
 	
-	public String getWordCount(ReadFile file) throws IOException {
+	public String getFormatString(ReadFile file) throws IOException {
 		
-		HashMap<Integer, Integer> lenMap = file.lengthFreq;
+		
+		HashMap<Integer, Integer> lenMap = file.lengthFreq; // Instantiate Map
 		
 		StringBuilder str = new StringBuilder();
+		
+		// Format strings
 		
 		str.append("Word count = " + file.wordCount + "\n");
 		str.append("Average word length = " + file.averageLen + "\n");
