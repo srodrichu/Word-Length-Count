@@ -13,13 +13,26 @@ public class Runner {
 			Scanner obj = new Scanner(System.in);
 		    try {
 		    	while(true) {
-					System.out.println("Enter path to plain text file: ");
-					
-	//		    Instantiate classes and run program
-					String path = obj.nextLine();
-					ReadFile file = new ReadFile(path);
-					file.evalFile();
-					FormatMap build = new FormatMap();
+		    		
+		    		ReadFile file = null;
+		    		String path;
+		    		boolean validPath;
+		    		
+		    		do {
+		    			validPath = true;
+		    			try {
+							System.out.println("Enter path to plain text file: ");
+			//		    Instantiate classes and run program
+							path = obj.nextLine();
+							file = new ReadFile(path);
+							file.evalFile();
+		    			} catch(IOException e) {
+							validPath = false;
+							System.out.println("Invalid path input. Error: " + e);
+						}
+		    		} while(!validPath);
+		    		
+		    		FormatMap build = new FormatMap();
 					
 	//			Print results
 					System.out.println(build.getFormatString(file));
