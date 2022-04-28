@@ -16,8 +16,9 @@ public class FormatMap {
 	private String getHighFreq(HashMap<Integer,Integer> map) {
 		
 		String res;
+	
+		System.out.println(map);
 		
-//		
 		int max = Collections.max(map.values());
 		String template = "The most frequently occurring word length is " + max + ", ";
 		
@@ -39,8 +40,10 @@ public class FormatMap {
 			String joined = maxKeys
 					.stream().map(String::valueOf)
 				    .collect(Collectors.joining(", "));
+			
+			System.out.println(joined);
 
-			res = "for word lengths of " + joined + " & " + lastInt;
+			res = template + "for word lengths of " + joined + " & " + lastInt;
 		}
 		
 		return res;
