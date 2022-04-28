@@ -77,7 +77,7 @@ public class ReadFile {
 	
 	
 //	Reading the plain text file and sets the word length in the lengthFreq map
-	public void evalFile() throws IOException {
+	public HashMap<Integer, Integer> evalFile() throws IOException {
 		
 		//	Read text from character input stream
 		BufferedReader reader = new BufferedReader(new FileReader(this.path));
@@ -103,7 +103,7 @@ public class ReadFile {
 				
 				if (isNum(nextVal)) {
 					wl += 2;
-				} else if (unconWordEnd(nextVal)) {
+				} else if (unconWordEnd(nextVal) || condWordEnd(nextVal)) {
 					putWl(wl);
 					wl = 0;
 				} else {
@@ -130,6 +130,8 @@ public class ReadFile {
 		
 		// Close the stream
 		reader.close();
+		
+		return lengthFreq;
 	}
 	
 	

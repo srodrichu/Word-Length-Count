@@ -1,5 +1,6 @@
 package com.synalogik.formatMap;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -29,7 +30,7 @@ public class FormatMap {
 		}
 		
 		if (maxKeys.size() == 1) res = template + "for word length of " + maxKeys.get(0);
-		else if (maxKeys.size() == 2) res = template + "for word lengths of " + maxKeys.get(0) + " & " + maxKeys.get(0);
+		else if (maxKeys.size() == 2) res = template + "for word lengths of " + maxKeys.get(0) + " & " + maxKeys.get(1);
 		else {
 			int lastInd = maxKeys.size() - 1;
 			int lastInt = maxKeys.get(lastInd);
@@ -45,7 +46,7 @@ public class FormatMap {
 		return res;
 	}
 	
-	public String getWordCount(ReadFile file) {
+	public String getWordCount(ReadFile file) throws IOException {
 		
 		HashMap<Integer, Integer> lenMap = file.lengthFreq;
 		
