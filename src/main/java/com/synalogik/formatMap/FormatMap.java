@@ -50,20 +50,23 @@ public class FormatMap {
 		
 		HashMap<Integer, Integer> lenMap = file.lengthFreq;
 		
-		System.out.println("Word count = " + file.wordCount);
-		System.out.println("Average word length = " + file.averageLen);
+		StringBuilder str = new StringBuilder();
+		
+		str.append("Word count = " + file.wordCount + "\n");
+		str.append("Average word length = " + file.averageLen + "\n");
 		
 		for (Map.Entry<Integer, Integer> entry : lenMap.entrySet()) {
 			
 			Integer key = entry.getKey();
 			Integer value = entry.getValue();
 			
-			System.out.println("Number of words of length " + key + " is " + value);
+			str.append("Number of words of length " + key + " is " + value + "\n");
 			
 		}
 		
-		return getHighFreq(lenMap);
+		str.append(getHighFreq(lenMap));
 		
+		return str.toString();
 	}
 	
 	

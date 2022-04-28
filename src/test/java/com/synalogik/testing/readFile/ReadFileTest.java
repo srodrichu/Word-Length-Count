@@ -19,7 +19,7 @@ public class ReadFileTest {
 	@Before
 	public void init() {
 		
-		map1.put(1, 2);
+		map1.put(1, 3);
 		map1.put(2, 3);
 		map1.put(3, 2);
 		map1.put(4, 3);
