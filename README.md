@@ -58,7 +58,7 @@ I presumed that the classification of characters that aren’t used in the given
 
 1.2 Open the repo in terminal
 
-![Screenshot 2022-04-28 at 17.41.17.png](Synalogik%20Java%20Programming%20Test%20Documentation%20480ea8e44f834007abae4877e4178b56/Screenshot_2022-04-28_at_17.41.17.png)
+![Screenshot 2022-04-28 at 17.41.17.png](READMEimgs/Screenshot_2022-04-28_at_17.41.17.png)
 
 1.3 Build the project using:
 
@@ -66,7 +66,7 @@ I presumed that the classification of characters that aren’t used in the given
 mvn clean install
 ```
 
-![Example of build](Synalogik%20Java%20Programming%20Test%20Documentation%20480ea8e44f834007abae4877e4178b56/Untitled.png)
+![Example of build](READMEimgs/Untitled.png)
 
 Example of build
 
